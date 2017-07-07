@@ -18,4 +18,4 @@ deployment:
   staging:
     branch: master
     commands: 
-      - sudo /opt/google-cloud-sdk/bin/gsutil -h "Cache-Control:public,max-age=3600" -m rsync -R -d "site/*" "gs://amandaaurita.com"
+      - sudo /opt/google-cloud-sdk/bin/gsutil -h "Cache-Control:public,max-age=3600" -m rsync -R -d site "gs://amandaaurita.com"
