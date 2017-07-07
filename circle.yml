@@ -1,0 +1,21 @@
+machine:
+  node:
+    version: 7.7.3
+
+dependencies:
+  post:
+    - pyenv global 2.7.12
+    - echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/gcloud-service-key.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
+    - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud config set project $GCLOUD_PROJECT
+
+test:
+  override:
+    - echo "test"
+
+deployment:
+  staging:
+    branch: master
+    commands: 
+      - sudo /opt/google-cloud-sdk/bin/gsutil -h "Cache-Control:public,max-age=3600" -m rsync -R -d . gs://amandaaurita.com 
