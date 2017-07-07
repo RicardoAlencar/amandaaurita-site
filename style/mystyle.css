@@ -1,0 +1,39 @@
+
+
+#profilepic{
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+}
+#studiespic{
+    width: 90%;
+    height: 80%;
+    margin-top: 20px;
+}
+
+#appPhoto{
+    width:50%;
+    height: 90%;
+    margin: 10px;
+}
+
+#pucProject{
+    width: 100%;
+    height: 90%;
+    border: 1px solid gainsboro;
+}
+
+#rrr{
+    width: 100%;
+    height: 90%;
+    margin: 10px;
+}
+
+#top{
+    text-align: center;
+}
+
+
+li{
+  font-size: 18px;
+}
